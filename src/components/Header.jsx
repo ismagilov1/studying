@@ -14,26 +14,28 @@ const Header = () => {
 
   const [isNewUser, setNewUser] = useState(true);
   return (
-    <header className="p-2 bg-slate-700 text-stone-900 font-bold flex justify-between">
-      <nav>
-        <ul className="flex flex-row gap-3">
-          <NavLink
-            text={"Registration"}
-            onClick={() => {
-              setNewUser(true);
-            }}
-          />
-          <NavLink
-            text={"Login"}
-            onClick={() => {
-              setNewUser(false);
-            }}
-          />
-          {isNewUser ? <RegistrForm /> : <LoginForm />}
-        </ul>
-      </nav>
-      <time dateTime={currDate}>{currDate}</time>
-    </header>
+    <>
+      <header className="p-2 bg-slate-700 text-stone-900 font-bold flex justify-between">
+        <nav>
+          <ul className="flex flex-row gap-3">
+            <NavLink
+              text={"Registration"}
+              onClick={() => {
+                setNewUser(true);
+              }}
+            />
+            <NavLink
+              text={"Login"}
+              onClick={() => {
+                setNewUser(false);
+              }}
+            />
+          </ul>
+        </nav>
+        <time dateTime={currDate}>{currDate}</time>
+      </header>
+      {isNewUser ? <RegistrForm /> : <LoginForm />}
+    </>
   );
 };
 
